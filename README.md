@@ -66,3 +66,32 @@ A backend API server built using **FastAPI**, offering full **CRUD** functionali
    ```bash
    git clone https://github.com/yourusername/MyApiServer.git
    cd MyApiServer
+
+2.Create and Activate Virtual Environment:
+    python -m venv venv
+    venv\Scripts\activate   # For Windows
+    # source venv/bin/activate   # For macOS/Linux
+
+3.Install Dependencies:
+   pip install fastapi uvicorn sqlalchemy
+4.Run the Server:
+  uvicorn main:app --reload
+
+5.Access the Application:
+   Swagger UI: http://127.0.0.1:8000/docs
+   Root URL: http://127.0.0.1:8000/
+
+Sample curl Commands
+➕ Create an item:
+    curl.exe -X POST "http://127.0.0.1:8000/items/?name=Book&description=A%20simple%20book"
+📥 Get all items:
+    curl.exe http://127.0.0.1:8000/items/
+🔍 Get item by ID:
+    curl.exe http://127.0.0.1:8000/items/1
+✏️ Update an item:
+    curl.exe -X PUT "http://127.0.0.1:8000/items/1" -H "Content-Type: application/json" -d "{\"name\": \"Notebook\", \"description\": \"Updated item\"}"
+❌ Delete an item:
+    curl.exe -X DELETE http://127.0.0.1:8000/items/1
+
+
+
